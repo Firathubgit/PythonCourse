@@ -15,9 +15,11 @@ def main():
         # Steg 2: Beräkna vårens ankomstdatum
         spring_date = spring_start_date(temperatures)
         print(f"Vårens ankomst: {spring_date.strftime('%Y-%m-%d')}")
+        
 
     except ValueError as e:
         # Hantera förväntade fel från funktionen
+        print("Value error")
         print(f"Fel: {e}")
 
     except Exception as e:

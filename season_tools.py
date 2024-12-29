@@ -26,7 +26,7 @@ def spring_start_date(temperatures):
     for i in range(len(temperatures) - 6):  # -6 för att undvika IndexError
         if all(temp > 0 for temp in temperatures[i:i + 7]):
             arrival_date = start_date + timedelta(days=i)
-
+            
             # Kontrollera om datumet är för sent
             if arrival_date > date(2024, 7, 31):
                 raise ValueError("Vårens ankomst kan inte vara senare än 31 juli!")
@@ -35,5 +35,3 @@ def spring_start_date(temperatures):
 
     # Om ingen vår hittas, kasta ett fel
     raise ValueError("Våren är inte här än!")
-
-print(spring_start_date([-1.4, 0.3, -0.5, 0.3, 0.0, 1.7, 1.6, 0.9, 0.2, 0.3, 1.2, 1.4, 0.9, -0.2]))
